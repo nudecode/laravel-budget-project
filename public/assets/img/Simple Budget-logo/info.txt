@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Nexa_Free_Bold
+font link: https://www.fontfabric.com/nexa-free-font/
+font author: Font Fabric
+font author site: http://www.fontfabric.com/
+
+
+icon designer: Shital Patel
+icon designer link: /shital777
+        
+{"bg":"#00242B","icon":"#7DE38D","font":"#7DE38D","slogan":"#91f7a1"}
+      

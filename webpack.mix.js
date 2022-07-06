@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,9 +11,11 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .webpackConfig(require('./webpack.config'));
+mix.js("resources/js/app.js", "public/js");
+mix.js("resources/js/main.js", "public/js/main.js")
+    .sass("resources/sass/app.scss", "public/css")
+    mix.css("resources/css/style.css", "public/css/style.css")
+    .webpackConfig(require("./webpack.config"));
 
 if (mix.inProduction()) {
     mix.version();

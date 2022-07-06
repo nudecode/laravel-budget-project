@@ -9,8 +9,8 @@
             crossorigin="anonymous"
         ></script>
         <link rel="stylesheet" href="/css/app.css" />
-        <link rel="stylesheet" href="/public/css/style.css" />
-        <title>Expense Tracker</title>
+        <link rel="stylesheet" href="/css/style.css" />
+        <title>Simple Budget</title>
     </head>
     <body>
         <h2>
@@ -34,7 +34,7 @@
             </div>
 
             <h3>
-                <span><i class="far fa-edit"></i></span> Add New Transaction
+                <span><i class="far fa-edit"></i></span> Add New Budget Item
             </h3>
             <form id="form">
                 <div class="form-control">
@@ -52,11 +52,11 @@
                         placeholder="Enter amount..."
                     />
                 </div>
-                <button class="btn">Add Transaction</button>
+                <button class="btn">Add Item</button>
             </form>
 
             <h3>
-                <span><i class="fas fa-receipt"></i></span> Transactions
+                <span><i class="fas fa-receipt"></i></span> Budget Items
             </h3>
             <!-- change to history when date functionality has been added-->
             <ul id="list" class="list">
@@ -64,6 +64,6 @@
             </ul>
         </div>
 
-        <script src="/public/js/main.js"></script>
+        <script src="/js/main.js"></script>
     </body>
 </html>
