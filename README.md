@@ -9,7 +9,7 @@
 
 ## About Simple Budget
 
-
+<p>Simple budget app, to help keep your finances in order</P>
 
 ## License
 
