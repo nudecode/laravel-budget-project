@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/budget', '/budget')->name('budget');
+Route::view('/budget', '/budget.budget')->name('budget');
 
 Route::middleware([
     'auth:sanctum',

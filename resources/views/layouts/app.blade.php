@@ -7,16 +7,24 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <!-- Fontawesome -->
+        <script
+            src="https://kit.fontawesome.com/1e6705f353.js"
+            crossorigin="anonymous"
+        ></script>
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/style.css') }}">
 
         @livewireStyles
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="{{ mix('js/main.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased bg-light">
         <x-jet-banner />
