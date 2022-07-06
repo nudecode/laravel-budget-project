@@ -1,4 +1,4 @@
-<p align="center"><a href="#" target="_blank"><img src="../main/public/assets/img/Simple Budget-logo/github/default.png" height="200" width="150"></a></p>
+<p align="center"><a href="#" target="_blank"><img src="../main/public/assets/img/Simple Budget-logo/default.png" height="200" width="200"></a></p>
 
 <p align="center">
 <a href=""><img src="" alt="Build Status"></a>
