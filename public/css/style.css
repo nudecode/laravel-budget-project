@@ -1,13 +1,13 @@
 @import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
 :root {
-    --box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 * {
     box-sizing: border-box;
 }
 
-body {
+/* body {
     background-color: #f7f7f7;
     display: flex;
     flex-direction: column;
@@ -15,13 +15,13 @@ body {
     justify-content: center;
     min-height: 100vh;
     margin: 0;
-    font-weight: 'lato', sans-serif;
+    font-weight: "lato", sans-serif;
 }
 
-.contsiner {
+.container {
     margin: 30px auto;
     width: 350px;
-}
+} */
 
 h1 {
     letter-spacing: 1px;
@@ -44,6 +44,7 @@ h4 {
     box-shadow: var(--box-shadow);
     padding: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     margin: 20px 0;
 }
@@ -55,6 +56,23 @@ h4 {
 
 .inc-exp-container > div:first-of-type {
     border-right: 1px solid #dedede;
+}
+
+.info-card {
+    background-color: #fff;
+    border-left-width: 1px solid #dedede;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 5px 0;
+}
+
+.info-card-income {
+    border-left: 5px solid #2ecc71;
+    color: #2ecc71;
+}
+.info-card-expense {
+    border-left: 5px solid #c0392b;
+    color: #c0392b;
 }
 
 .money {
@@ -76,7 +94,8 @@ label {
     margin: 10px 0;
 }
 
-input[type='text'], input[type='number'] {
+input[type="text"],
+input[type="number"] {
     border: 1px solid #dedede;
     border-radius: 2px;
     display: block;
@@ -98,7 +117,8 @@ input[type='text'], input[type='number'] {
     width: 100%;
 }
 
-.btn:focus, .delete-btn:focus {
+.btn:focus,
+.delete-btn:focus {
     outline: 0;
 }
 
@@ -146,3 +166,4 @@ input[type='text'], input[type='number'] {
 .list li:hover .delete-btn {
     opacity: 1;
 }
+

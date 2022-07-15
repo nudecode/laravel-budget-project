@@ -1,3 +1,4 @@
+const { copyDirectory } = require("laravel-mix");
 const mix = require("laravel-mix");
 
 /*
@@ -12,10 +13,34 @@ const mix = require("laravel-mix");
  */
 
 mix.js("resources/js/app.js", "public/js");
-mix.js("resources/js/main.js", "public/js/main.js")
-    .sass("resources/sass/app.scss", "public/css")
-    mix.css("resources/css/style.css", "public/css/style.css")
-    .webpackConfig(require("./webpack.config"));
+mix.js("resources/js/main.js", "public/js/main.js");
+mix.js(
+    "resources/admin-template/js/bootstrap.bundle.min.js",
+    "public/js/bootstrap.bundle.min.js"
+);
+mix.js(
+    "resources/admin-template/js/jquery-3.5.0.min.js",
+    "public/js/jquery.js"
+);
+mix.js(
+    "resources/admin-template/js/bootstrap.min.js",
+    "public/js/bootstrap.min.js"
+);
+mix.js("resources/admin-template/js/script.js", "public/js/script.js");
+mix.sass("resources/sass/app.scss", "public/css");
+mix.css("resources/css/style.css", "public/css/style.css");
+mix.css(
+    "resources/admin-template/css/bootstrap.css",
+    "public/css/bootstrap.css"
+);
+mix.css(
+    "resources/admin-template/css/responsive.css",
+    "public/css/responsive.css"
+);
+mix.css(
+    "resources/admin-template/css/ui.css",
+    "public/css/ui.css"
+).webpackConfig(require("./webpack.config"));
 
 if (mix.inProduction()) {
     mix.version();
