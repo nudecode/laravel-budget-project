@@ -6,7 +6,6 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
-<<<<<<< HEAD
 
         <!-- Fontawesome -->
         <script
@@ -14,10 +13,8 @@
             crossorigin="anonymous"
         ></script>
 
-=======
         {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> --}}
         <link rel="stylesheet" href="{{ mix('css/bootstrap.css') }}">
->>>>>>> main
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
 
@@ -25,11 +22,8 @@
         <link rel="stylesheet" href="{{ mix('css/ui.css') }}">
         <link rel="stylesheet" href="{{ mix('css/responsive.css') }}">
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-<<<<<<< HEAD
         <link rel="stylesheet" href="{{ mix('css/style.css') }}">
-=======
         {{-- <link rel="stylesheet" href="{{ mix('css/style.css') }}"> --}}
->>>>>>> main
 
         @livewireStyles
 
