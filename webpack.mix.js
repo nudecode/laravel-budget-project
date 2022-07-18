@@ -14,7 +14,6 @@ const mix = require("laravel-mix");
 
 mix.js("resources/js/app.js", "public/js");
 mix.js("resources/js/main.js", "public/js/main.js");
-<<<<<<< HEAD
 mix.js("resources/js/dashboard.js", "public/js/dashboard.js").sass(
     "resources/sass/app.scss",
     "public/css"
@@ -22,7 +21,6 @@ mix.js("resources/js/dashboard.js", "public/js/dashboard.js").sass(
 mix.css("resources/css/style.css", "public/css/style.css").webpackConfig(
     require("./webpack.config")
 );
-=======
 mix.js(
     "resources/admin-template/js/bootstrap.bundle.min.js",
     "public/js/bootstrap.bundle.min.js"
@@ -50,7 +48,6 @@ mix.css(
     "resources/admin-template/css/ui.css",
     "public/css/ui.css"
 ).webpackConfig(require("./webpack.config"));
->>>>>>> main
 
 if (mix.inProduction()) {
     mix.version();
