@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Transaction;
 use Illuminate\Http\Request;
+use PostScripton\Money\Money;
 use Illuminate\Support\Facades\Auth;
 
 class TransactionController extends Controller
@@ -31,9 +32,10 @@ class TransactionController extends Controller
     public function store(Request $request)
     {
         $transaction = new Transaction;
+        $amount = new Money($request->amount);
 
         $transaction->name = $request->name;
-        $transaction->amount = $request->amount;
+        $transaction->amount = $amount;
 
         $transaction->save();
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Budget;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
+use PostScripton\Money\Money;
 use Illuminate\Support\Facades\Auth;
 
 class BudgetController extends Controller
@@ -20,9 +21,14 @@ class BudgetController extends Controller
         //     ->with('user')
         //     ->get();
         $transactions = Transaction::all();
+        $incomes = Transaction::query()->sum('amount');
+        
+        $expenses = Transaction::sum('amount');
 
         return view('budget.index')
-            ->with('transactions', $transactions);
+            ->with('transactions', $transactions)
+            ->with('incomes', $incomes)
+            ->with('expenses', $expenses);
     }
 
     public function store()
@@ -30,5 +36,5 @@ class BudgetController extends Controller
         //
     }
 
-    
+
 }
