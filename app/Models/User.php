@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Budget;
+use App\Models\Transaction;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Jetstream\HasProfilePhoto;
 use Illuminate\Notifications\Notifiable;
@@ -49,6 +50,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'price' => MoneyCast::class,
     ];
 
     /**
@@ -60,8 +62,8 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function budgets()
+    public function transactions()
     {
-        return $this->hasMany(Budget::class);
+        return $this->hasMany(Transaction::class);
     }
 }

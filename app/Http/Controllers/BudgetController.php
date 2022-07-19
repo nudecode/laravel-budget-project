@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Budget;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,11 +16,19 @@ class BudgetController extends Controller
      */
     public function index()
     {
-        $budgets = Budget::where('user_id', Auth::id())
-            ->with('user')
-            ->get();
+        // $budgets = Budget::where('user_id', Auth::id())
+        //     ->with('user')
+        //     ->get();
+        $transactions = Transaction::all();
 
         return view('budget.index')
-            ->with('budgets', $budgets);
+            ->with('transactions', $transactions);
     }
+
+    public function store()
+    {
+        //
+    }
+
+    
 }

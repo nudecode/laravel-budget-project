@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BudgetController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/budget', '/budget.budget')->name('budget');
+Route::get('/budget', [BudgetController::class,'index'])->name('budget');
 
 Route::middleware([
     'auth:sanctum',
@@ -27,5 +29,6 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::post('/transaction', [TransactionController::class, 'store'])->name('store.transaction');
 
 });

@@ -18,9 +18,6 @@ mix.js("resources/js/dashboard.js", "public/js/dashboard.js").sass(
     "resources/sass/app.scss",
     "public/css"
 );
-mix.css("resources/css/style.css", "public/css/style.css").webpackConfig(
-    require("./webpack.config")
-);
 mix.js(
     "resources/admin-template/js/bootstrap.bundle.min.js",
     "public/js/bootstrap.bundle.min.js"
@@ -34,7 +31,6 @@ mix.js(
     "public/js/bootstrap.min.js"
 );
 mix.js("resources/admin-template/js/script.js", "public/js/script.js");
-mix.sass("resources/sass/app.scss", "public/css");
 mix.css("resources/css/style.css", "public/css/style.css");
 mix.css(
     "resources/admin-template/css/bootstrap.css",
