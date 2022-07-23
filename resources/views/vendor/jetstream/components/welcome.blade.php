@@ -100,29 +100,29 @@
         <div class="card mb-4">
        <article class="card-body">
 
-<h5 class="card-title">Summary</h5>
+        <h5 class="card-title">Summary</h5>
 
 
-<span class="text-muted">Balance</span>
-<div class="progress mb-3">
-<div class="progress-bar progress-bar-striped" role="progressbar" style="width: 15%">15%</div>
-</div>
+        <span class="text-muted">Balance</span>
+        <div class="progress mb-3">
+        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 15%">15%</div>
+        </div>
 
-<span class="text-muted">Income</span>
-<div class="progress mb-3">
-<div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 65%">65% </div>
-</div>
+        <span class="text-muted">Income</span>
+        <div class="progress mb-3">
+        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 65%">65% </div>
+        </div>
 
-<span class="text-muted">Expenses</span>
-<div class="progress mb-3">
-<div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 51%"> 51% </div>
-</div>
-<br>
-<a href="#" class="btn btn-light">Open analytics <i class="material-icons md-open_in_new"></i> </a>
-         </article> <!-- card-body end// -->
-        </div> <!-- card end// -->
+        <span class="text-muted">Expenses</span>
+        <div class="progress mb-3">
+        <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 51%"> 51% </div>
+        </div>
+        <br>
+        <a href="#" class="btn btn-light">Open analytics <i class="material-icons md-open_in_new"></i> </a>
+                </article> <!-- card-body end// -->
+                </div> <!-- card end// -->
 
-    </div> <!-- col end// -->
+        </div> <!-- col end// -->
         <div class="col-xl-8 col-lg-12">
 
          <x-budget-list />

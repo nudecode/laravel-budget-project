@@ -27,24 +27,24 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Transaction ID</th>
+                                <th>Date</th>
+                                <th>Biller</th>
                                 <th>Amount</th>
                                 <th>Status</th>
-                                <th>Date</th>
                                 <th class="text-end"> Action </th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($transactions as $transaction)
                             <tr>
-                                <td><b>{{$transaction->id}}</b></td>
-                                <td>({{$transaction->amount}})</td>
+                                <td>{{$transaction->created_at->format('d/m/Y')}}</td>
+                                <td>{{$transaction->name}}</td>
+                                <td>{{$transaction->amount}}</td>
                                 <td>
                                     <div class="col-lg-2 col-sm-2 col-4 col-status">
-                                        <span class="badge rounded-pill alert-success">Paid</span>
+                                        <span class="badge rounded-pill {{$transaction->amount->greaterThan(0) ? 'alert-success' : 'alert-danger'}}">{{$transaction->amount->greaterThan(0) ? 'Income' : 'Expense'}}</span>
                                     </div>
                                 </td>
-                                <td>{{$transaction->created_at->format('d/m/Y')}}</td>
                                 <td class="text-end">
                                     <a href="#" class="btn btn-sm btn-light">Details</a>
                                 </td>

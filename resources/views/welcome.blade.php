@@ -7,24 +7,27 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Fontawesome -->
-        <script
-            src="https://kit.fontawesome.com/1e6705f353.js"
-            crossorigin="anonymous"
-        ></script>
+         <!-- Fontawesome -->
+         <script
+         src="https://kit.fontawesome.com/1e6705f353.js"
+         crossorigin="anonymous"
+     ></script>
 
-        {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> --}}
-        <link rel="stylesheet" href="{{ mix('css/bootstrap.css') }}">
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> --}}
+     <link rel="stylesheet" href="{{ mix('css/bootstrap.css') }}">
+     <!-- Fonts -->
+     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/ui.css') }}">
-        <link rel="stylesheet" href="{{ mix('css/responsive.css') }}">
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-        <link rel="stylesheet" href="{{ mix('css/style.css') }}">
+     <!-- Styles -->
+     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+     <link rel="stylesheet" href="{{ mix('css/ui.css') }}">
+     <link rel="stylesheet" href="{{ mix('css/responsive.css') }}">
+     {{-- <link rel="stylesheet" href="{{ mix('css/style.css') }}"> --}}
 
-        @livewireStyles
+     <!-- iconfont -->
+     <link rel="stylesheet" href="{{mix('fonts/material-icon/css/round.css')}}"/>
+
+     @livewireStyles
 
         <!-- Scripts -->
         <script src="{{ mix('js/jquery.js') }}" defer></script>
@@ -84,7 +87,7 @@
                                 <a href="{{ url('/dashboard') }}" class="btn btn-outline-secondary btn-lg px-4">Dashboard</a>
                             @else
                                 @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="btn btn-primary btn-lg px-4 gap-3">Register</a>
+                                    <a href="{{ route('register') }}" class="text-white btn btn-success btn-lg px-4 gap-3">Register</a>
                                     <a href="{{ route('login') }}" class="btn btn-outline-secondary btn-lg px-4">Login</a>
                                 @endif
                             @endif

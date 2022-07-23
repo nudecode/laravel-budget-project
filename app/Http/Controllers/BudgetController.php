@@ -21,14 +21,33 @@ class BudgetController extends Controller
         //     ->with('user')
         //     ->get();
         $transactions = Transaction::all();
-        $incomes = Transaction::query()->sum('amount');
-        
-        $expenses = Transaction::sum('amount');
+        $getincomes = Transaction::select('amount')->get()->toArray();
+        $incomes = money(0);
+        $expense = money(0);
+
+        foreach ($getincomes as $key => $value) {
+
+            $total = $value['amount'];
+
+            if ($total->greaterThan(0)) {
+                $incomes->add($total);
+
+            } else {
+                $expense->add($total);
+            }
+
+        }
+
+        $totalincomes = $incomes;
+
+
+        $totalexpenses = $expense;
+        dump($totalexpenses);
 
         return view('budget.index')
             ->with('transactions', $transactions)
-            ->with('incomes', $incomes)
-            ->with('expenses', $expenses);
+            ->with('totalincomes', $totalincomes)
+            ->with('totalexpenses', $totalexpenses);
     }
 
     public function store()

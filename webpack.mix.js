@@ -16,7 +16,7 @@ mix.js("resources/js/app.js", "public/js");
 mix.js("resources/js/main.js", "public/js/main.js");
 mix.js("resources/js/dashboard.js", "public/js/dashboard.js").sass(
     "resources/sass/app.scss",
-    "public/css"
+    "public/css/bootstrap.css"
 );
 mix.js(
     "resources/admin-template/js/bootstrap.bundle.min.js",
@@ -31,18 +31,21 @@ mix.js(
     "public/js/bootstrap.min.js"
 );
 mix.js("resources/admin-template/js/script.js", "public/js/script.js");
-mix.css("resources/css/style.css", "public/css/style.css");
-mix.css(
-    "resources/admin-template/css/bootstrap.css",
-    "public/css/bootstrap.css"
-);
+// mix.css("resources/css/style.css", "public/css/style.css");
+// mix.css(
+//     "resources/admin-template/css/bootstrap.css",
+//     "public/css/bootstrap.css"
+// );
 mix.css(
     "resources/admin-template/css/responsive.css",
     "public/css/responsive.css"
 );
-mix.css(
-    "resources/admin-template/css/ui.css",
-    "public/css/ui.css"
+mix.css("resources/admin-template/css/ui.css", "public/css/ui.css");
+mix.copyDirectory("resources/admin-template/fonts", "public/fonts");
+mix.copyDirectory("resources/admin-template/images", "public/assets/img");
+mix.copyDirectory(
+    "resources/admin-template/plugins",
+    "public/plugins"
 ).webpackConfig(require("./webpack.config"));
 
 if (mix.inProduction()) {

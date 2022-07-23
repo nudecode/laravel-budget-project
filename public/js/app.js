@@ -2939,30 +2939,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/css/style.css":
-/*!*********************************!*\
-  !*** ./resources/css/style.css ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./resources/admin-template/css/bootstrap.css":
-/*!****************************************************!*\
-  !*** ./resources/admin-template/css/bootstrap.css ***!
-  \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ "./resources/admin-template/css/responsive.css":
 /*!*****************************************************!*\
   !*** ./resources/admin-template/css/responsive.css ***!
@@ -3086,11 +3062,9 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
-/******/ 			"css/style": 0,
-/******/ 			"css/app": 0,
+/******/ 			"css/bootstrap": 0,
 /******/ 			"css/ui": 0,
-/******/ 			"css/responsive": 0,
-/******/ 			"css/bootstrap": 0
+/******/ 			"css/responsive": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -3140,12 +3114,10 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/style","css/app","css/ui","css/responsive","css/bootstrap"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/style","css/app","css/ui","css/responsive","css/bootstrap"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/style","css/app","css/ui","css/responsive","css/bootstrap"], () => (__webpack_require__("./resources/css/style.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/style","css/app","css/ui","css/responsive","css/bootstrap"], () => (__webpack_require__("./resources/admin-template/css/bootstrap.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/style","css/app","css/ui","css/responsive","css/bootstrap"], () => (__webpack_require__("./resources/admin-template/css/responsive.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/style","css/app","css/ui","css/responsive","css/bootstrap"], () => (__webpack_require__("./resources/admin-template/css/ui.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/bootstrap","css/ui","css/responsive"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/bootstrap","css/ui","css/responsive"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/bootstrap","css/ui","css/responsive"], () => (__webpack_require__("./resources/admin-template/css/responsive.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/bootstrap","css/ui","css/responsive"], () => (__webpack_require__("./resources/admin-template/css/ui.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

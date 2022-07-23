@@ -15,7 +15,7 @@ return [
     | The code of the currency must be provided: USD, EUR, RUB, ...
     |
     */
-    'default_currency' => 'USD',
+    'default_currency' => 'AUD',
 
     /*
     |--------------------------------------------------------------------------
