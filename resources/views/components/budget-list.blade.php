@@ -3,7 +3,7 @@
         <div class="content-header">
             <h2 class="content-title">Budgets </h2>
             <div>
-                <a href="#" class="btn btn-primary"><i class="material-icons md-plus"></i> Create new</a>
+                <a href="{{ route('create.budget') }}" class="btn btn-primary"><i class="material-icons md-plus"></i> Create new</a>
             </div>
         </div>
 

@@ -3,7 +3,7 @@
 	<div class="content-header">
 		<h2 class="content-title">Create Budget </h2>
 		<div>
-			<a href="#" class="btn btn-outline-danger"> &times; Discard</a>
+			<a href="{{ url()->previous() }}" class="btn btn-outline-danger"> &times; Discard</a>
 		</div>
 	</div>
 
