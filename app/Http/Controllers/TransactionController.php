@@ -36,6 +36,7 @@ class TransactionController extends Controller
 
         $transaction->name = $request->name;
         $transaction->amount = $amount;
+        $transaction->budget_id = $request->budget_id;
 
         $transaction->save();
 

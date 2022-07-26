@@ -29,6 +29,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/create-budget', [BudgetController::class, 'create'])->name('create.budget');
+    Route::post('/budget', [BudgetController::class, 'store'])->name('store.budget');
     Route::post('/transaction', [TransactionController::class, 'store'])->name('store.transaction');
 
 });

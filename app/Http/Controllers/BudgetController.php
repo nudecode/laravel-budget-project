@@ -50,9 +50,33 @@ class BudgetController extends Controller
             ->with('totalexpenses', $totalexpenses);
     }
 
-    public function store()
+    public function create()
     {
-        //
+        return view('budget.create');
+    }
+
+    public function store(Request $request)
+    {
+        // dd($request);
+
+        // $budget = $request->validate([
+
+        // ]);
+
+        $budget = new Budget;
+
+        $budget->name = $request->name;
+        $budget->period = $request->period;
+        $budget->period_start = $request->period_start;
+        $budget->period_end = $request->period_end;
+        $budget->user_id = $request->user()->id;
+
+        $budget->save();
+
+        return redirect()->back()->with('$budget', $budget);
+
+
+
     }
 
 
