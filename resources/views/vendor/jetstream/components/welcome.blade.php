@@ -57,11 +57,7 @@
   </div> --}}
 
 <section class="content-main">
-	<div class="content-header">
-		<div>
-			<a href="#" class="btn btn-primary">Create budget</a>
-		</div>
-	</div>
+
 <div class="row">
     <div class="col-lg-4">
         <div class="card card-body mb-4">
@@ -125,7 +121,7 @@
         </div> <!-- col end// -->
         <div class="col-xl-8 col-lg-12">
 
-         <x-budget-list />
+         <x-budget-list :budgets="$budgets"/>
 
         </div>
     </div>

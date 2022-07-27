@@ -14,6 +14,7 @@
 				<div class="mb-4">
 					<label for="product_name" class="form-label">Name</label>
 					<input id="name" name="name" placeholder="Enter item..." class="form-control">
+					<input type="hidden" id="budget_id" name="budget_id" value="{{$budget->id}}">
 				</div>
 				<div class="mb-4">
 					<label for="product_name" class="form-label">Amount</label>

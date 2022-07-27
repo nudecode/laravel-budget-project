@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Budget;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use PostScripton\Money\Money;
@@ -14,11 +15,14 @@ class TransactionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Budget $budget)
     {
-        $transactions = Transaction::all()
-            ->with('user')
-            ->get();
+        // $transactions = Transaction::where()
+        //     ->with('user')
+        //     ->get();
+        $transactions = $budget->transactions();
+
+        dd($transactions);
 
         return view('budget.transactions')
             ->with('transactions', $transactions);
@@ -40,7 +44,11 @@ class TransactionController extends Controller
 
         $transaction->save();
 
-        return redirect()->back();
+         $transaction = $transaction->fresh();
+
+        return redirect()->back()->with('transaction', $transaction);
 
     }
+
+    
 }

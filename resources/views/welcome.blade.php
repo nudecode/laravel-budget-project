@@ -83,7 +83,7 @@
                       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                         @if (Route::has('login'))
                             @auth
-                                <a href="" class="btn btn-primary btn-lg px-4 gap-3">Create Budget</a>
+                                <a href="{{ route('store.budget') }}" class="btn btn-primary btn-lg px-4 gap-3">Create Budget</a>
                                 <a href="{{ url('/dashboard') }}" class="btn btn-outline-secondary btn-lg px-4">Dashboard</a>
                             @else
                                 @if (Route::has('register'))

@@ -15,15 +15,16 @@ class BudgetController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Budget $budget)
     {
-        // $budgets = Budget::where('user_id', Auth::id())
-        //     ->with('user')
-        //     ->get();
-        $transactions = Transaction::all();
+        $budget = $budget;
+
+        $transactions = Transaction::where('budget_id', $budget->id)->get();
+        // $transactions = $budget->transactions()->get();
         $getincomes = Transaction::select('amount')->get()->toArray();
         $incomes = money(0);
         $expense = money(0);
+        $balance = money(0);
 
         foreach ($getincomes as $key => $value) {
 
@@ -39,15 +40,15 @@ class BudgetController extends Controller
         }
 
         $totalincomes = $incomes;
-
-
         $totalexpenses = $expense;
-        dump($totalexpenses);
+        $totalbalance = $totalincomes->subtract($totalexpenses);
 
         return view('budget.index')
+            ->with('budget', $budget)
             ->with('transactions', $transactions)
             ->with('totalincomes', $totalincomes)
-            ->with('totalexpenses', $totalexpenses);
+            ->with('totalexpenses', $totalexpenses)
+            ->with('totalbalance', $totalbalance);
     }
 
     public function create()
@@ -73,8 +74,9 @@ class BudgetController extends Controller
 
         $budget->save();
 
-        return redirect()->back()->with('$budget', $budget);
+        $budget = $budget->fresh();
 
+        return redirect()->route('index.budget', $budget->id)->with('budget', $budget);
 
 
     }

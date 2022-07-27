@@ -4,6 +4,7 @@
             {{ __('New Budget') }}
         </h2>
     </x-slot>
+    <x-budget-header />
     <x-budget-summary />
 
     <x-addItem :transactions="$transactions"/>

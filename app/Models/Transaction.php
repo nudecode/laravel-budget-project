@@ -46,6 +46,11 @@ class Transaction extends Model
         return money($income, settings());
     }
 
+    public function inDollars()
+    {
+        return $this->amount / 100;
+    }
+
     public function income($values)
     {
         // $value = money($value, settings());

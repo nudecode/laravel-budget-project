@@ -17,11 +17,11 @@
 				</div>
 				<div class="mb-4">
 					<label for="product_name" class="form-label">From</label>
-					<input type="date" placeholder="Type here" class="form-control" name="period_from" id="product_name">
+					<input type="date" placeholder="Type here" class="form-control" name="period_start" id="period_start">
 				</div>
 				<div class="mb-4">
 					<label for="product_name" class="form-label">To</label>
-					<input type="date" placeholder="Type here" class="form-control" name="period_to" id="product_name">
+					<input type="date" placeholder="Type here" class="form-control" name="period_end" id="period_end">
 				</div>
 
 				{{-- <div class="mb-4">
@@ -45,7 +45,7 @@
 				  <span class="form-check-label">  Publish on website </span>
 				</label> --}}
 
-				<button type="submit" class="btn btn-primary">Add item</button>
+				<button type="submit" class="btn btn-primary">Add Budget</button>
 
 			</form>
           </div>

@@ -38,7 +38,7 @@
             </header> <!-- card-header end// -->
 
             <div class="card-body">
-
+                @foreach($budgets as $budget)
                 <article class="itemlist">
                     <div class="row align-items-center">
                         <div class="col col-check flex-grow-0">
@@ -47,9 +47,9 @@
                             </div>
                         </div>
                         <div class="col-lg-4 col-sm-4 col-8 flex-grow-1 col-name">
-                            <a class="itemside" href="#">
+                            <a class="itemside" href="{{ route('index.budget', $budget ) }}">
                                 <div class="info">
-                                    <h6 class="mb-0">Nov Fortnight 1</h6>
+                                    <h6 class="mb-0">{{$budget->name}}</h6>
                                 </div>
                             </a>
                         </div>
@@ -58,13 +58,13 @@
                             <span class="badge rounded-pill alert-success">Active</span>
                         </div>
                         <div class="col-lg-2 col-sm-2 col-4 col-date">
-                            <span>04/11/2020</span>
+                            <span>{{$budget->period->format('d/m/Y')}}</span>
                         </div>
                         <div class="col-lg-1 col-sm-2 col-4 col-action">
                             <div class="dropdown float-end">
                                 <a href="#" data-bs-toggle="dropdown" class="btn btn-sm btn-light"> <i class="material-icons md-more_horiz"></i> </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">View detail</a>
+                                    <a class="dropdown-item" href="{{ route('index.budget', $budget ) }}">View detail</a>
                                     <a class="dropdown-item" href="#">Edit info</a>
                                     <a class="dropdown-item text-danger" href="#">Delete</a>
                                 </div>
@@ -72,8 +72,9 @@
                         </div>
                     </div> <!-- row .// -->
                 </article>  <!-- itemlist  .// -->
+                @endforeach
 
-                <article class="itemlist">
+                {{-- <article class="itemlist">
                     <div class="row align-items-center">
                         <div class="col col-check flex-grow-0">
                              <div class="form-check">
@@ -105,7 +106,7 @@
                             </div> <!-- dropdown // -->
                         </div>
                     </div> <!-- row .// -->
-                </article>  <!-- itemlist  .// -->
+                </article>  <!-- itemlist  .// --> --}}
 
                 <nav class="float-end mt-4" aria-label="Page navigation">
                   <ul class="pagination">
