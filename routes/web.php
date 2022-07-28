@@ -31,9 +31,15 @@ Route::middleware([
     //     return view('dashboard');
     // })->name('dashboard');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/budget/create', [BudgetController::class, 'create'])->name('create.budget');
     Route::get('/budget/{budget}', [BudgetController::class, 'index'])->name('index.budget');
-    Route::get('/create-budget', [BudgetController::class, 'create'])->name('create.budget');
     Route::post('/budget', [BudgetController::class, 'store'])->name('store.budget');
+
     Route::post('/transaction', [TransactionController::class, 'store'])->name('store.transaction');
 
+    Route::get('/billers', [BillerController::class, 'index'])->name('index.billers');
+    Route::get('/billers/create', [BillerController::class, 'create'])->name('create.biller');
+    Route::get('/billers/{biller}', [BillerController::class, 'show'])->name('show.biller');
+    Route::post('/billers', [BillerController::class, 'store'])->name('store.biller');
 });
