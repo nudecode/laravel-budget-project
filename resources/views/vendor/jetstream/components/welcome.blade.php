@@ -123,6 +123,8 @@
 
          <x-budget-list :budgets="$budgets"/>
 
+         <x-
+
         </div>
     </div>
 </div> <!-- row end// -->

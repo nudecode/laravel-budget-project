@@ -5,5 +5,5 @@
         </h2>
     </x-slot>
 
-    <x-jet-welcome :budgets="$budgets" />
+    <x-jet-welcome :budgets="$budgets"/>
 </x-app-layout>

@@ -53,7 +53,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col-lg-2 col-sm-2 col-4 col-price"> <span>$934.50</span> </div>
+                        <div class="col-lg-2 col-sm-2 col-4 col-price"> <span>${{--$budgetTotal--}}</span> </div>
                         <div class="col-lg-2 col-sm-2 col-4 col-status">
                             <span class="badge rounded-pill alert-success">Active</span>
                         </div>
