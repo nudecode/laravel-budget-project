@@ -35,10 +35,13 @@ class TransactionController extends Controller
 
     public function store(Request $request)
     {
+
+        dd($request);
         $transaction = new Transaction;
         $amount = new Money($request->amount);
 
-        $transaction->name = $request->name;
+        $transaction->budget_id = $request->id;
+        $transaction->biller_id = $request->biller_id;
         $transaction->amount = $amount;
         $transaction->budget_id = $request->budget_id;
 

@@ -23,30 +23,7 @@
 					<label for="product_name" class="form-label">To</label>
 					<input type="date" placeholder="Type here" class="form-control" name="period_end" id="period_end">
 				</div>
-
-				{{-- <div class="mb-4">
-					<label class="form-label">Amount</label>
-					<div class="row gx-2">
-						<div class="col-4">
-						    <input placeholder="Budget Amount" type="text" class="form-control">
-					  	</div>
-						<div class="col-2">
-						    <select class="form-select">
-						    	<option> USD </option>
-						    	<option> EUR </option>
-						    	<option> RUBL </option>
-						    </select>
-						</div>
-					</div> <!-- row.// -->
-				</div> --}}
-
-				{{-- <label class="form-check mb-4">
-				  <input class="form-check-input" type="checkbox" value="">
-				  <span class="form-check-label">  Publish on website </span>
-				</label> --}}
-
-				<button type="submit" class="btn btn-primary">Add Budget</button>
-
+                <button type="submit" class="btn btn-primary">Add Budget</button>
 			</form>
           </div>
     </div> <!-- card end// -->

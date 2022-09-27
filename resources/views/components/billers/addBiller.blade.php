@@ -9,56 +9,41 @@
 
 	<div class="card mb-4">
           <div class="card-body">
-			<form>
+			<form action="{{ route('store.biller') }}" method="POST">
+                @csrf
 				<div class="mb-4">
 					<label for="product_name" class="form-label">Biller Name</label>
-					<input type="text" placeholder="Type here" class="form-control" id="product_name">
-				</div>
-
-				<div class="mb-4">
-					<label class="form-label">Biller description</label>
-					<textarea placeholder="Type here" class="form-control" rows="4"></textarea>
+					<input name="name" id="name" type="text" placeholder="Type here" class="form-control">
 				</div>
 					<div class="row gx-2">
 					<div class="col-sm-6 mb-3">
 					    <label class="form-label">Category</label>
-					    <select class="form-select">
-					    	<option> Automobiles </option>
-					    	<option> Home items </option>
-					    	<option> Electronics </option>
-					    	<option> Smartphones </option>
-					    	<option> Sport items </option>
-					    	<option> Baby and Tous </option>
+					    <select name="category" id="category" class="form-select">
+					    	<option value="">-- Select One -- </option>
+                            @foreach ($categories as $category)
+                                <option value="{{$category->id}}" {{ (isset($category->id) || old('id'))? "selected":"" }}>{{$category->name}}</option>
+                            @endforeach
 					    </select>
 				  	</div>
-					  <div class="col-sm-6 mb-3">
+					  {{-- <div class="col-sm-6 mb-3">
 					    <label class="form-label">Sub-category</label>
 					    <select class="form-select">
-					    	<option> Nissan </option>
-					    	<option> Honda </option>
-					    	<option> Mercedes </option>
-					    	<option> Chevrolet </option>
+					    	<option> Mortgauge </option>
+					    	<option> Electricity </option>
+					    	<option> Gas </option>
+					    	<option> Petrol </option>
 					    </select>
-					  </div>
+					  </div> --}}
 				</div> <!-- row.// -->
-
-
-				<div class="mb-4">
+				{{-- <div class="mb-4">
 					<label class="form-label">Budget</label>
 					<div class="row gx-2">
 						<div class="col-4">
 						    <input placeholder="Type" type="text" class="form-control">
 					  	</div>
-						<div class="col-2">
-						    <select class="form-select">
-						    	<option> USD </option>
-						    	<option> EUR </option>
-						    	<option> RUBL </option>
-						    </select>
-						</div>
 					</div> <!-- row.// -->
-				</div>
-				<button class="btn btn-primary">Submit item</button>
+				</div> --}}
+				<button type="submit "class="btn btn-primary">Add Biller</button>
 
 			</form>
           </div>

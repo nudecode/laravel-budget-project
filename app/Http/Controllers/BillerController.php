@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Biller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -9,25 +11,34 @@ class BillerController extends Controller
 {
     public function index()
     {
-        dd("index method");
-
         $user = Auth::user();
-
-        $billers = $user->billers()
-            ->with('user')
-            ->get();
+        $billers = Biller::where('user_id', $user->id);
 
         return view('budget.index')
         ->with('billers', $billers);
     }
     public function create()
     {
-        dd("create method");
+        $categories = Auth::user()->categories;
+        dump($categories);
+        return view('billers.create')
+        ->with('categories', $categories);
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        dd("store method");
+        dump($request);
+
+        $biller = new Biller;
+
+        $biller->name = $request->name;
+        $biller->category_id = $request->category;
+        $biller->user_id = $request->user()->id;
+
+        $biller->save();
+
+        $biller = $biller->fresh();
+         return redirect()->route('dashboard', $biller->id)->with('biller', $biller);
     }
 
     public function show()
