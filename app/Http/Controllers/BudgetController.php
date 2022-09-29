@@ -15,11 +15,37 @@ class BudgetController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Budget $budget)
+    public function index()
     {
-        $budget = $budget;
+        $budgets = Budget::all();
 
-        $transactions = Transaction::where('budget_id', $budget->id)->get();
+
+
+        dump($budgets);
+
+        return view('budget.index')
+            ->with('budgets', $budgets);
+            // ->with('transactions', $transactions)
+            // ->with('totalincomes', $totalincomes)
+            // ->with('totalexpenses', $totalexpenses)
+            // ->with('totalbalance', $totalbalance);
+    }
+
+    public function create()
+    {
+        return view('budget.create');
+    }
+
+    /**
+     * Display the specified resource.
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+
+    public function show($id)
+    {
+        $budget = Budget::where('id', $id)->firstOrFail();
+         $transactions = Transaction::where('budget_id', $id)->get();
         // $transactions = $budget->transactions()->get();
         $getincomes = Transaction::select('amount')->get()->toArray();
         $incomes = money(0);
@@ -43,7 +69,7 @@ class BudgetController extends Controller
         $totalexpenses = $expense;
         $totalbalance = $totalincomes->subtract($totalexpenses);
 
-        return view('budget.index')
+        return view('budget.show')
             ->with('budget', $budget)
             ->with('transactions', $transactions)
             ->with('totalincomes', $totalincomes)
@@ -51,10 +77,7 @@ class BudgetController extends Controller
             ->with('totalbalance', $totalbalance);
     }
 
-    public function create()
-    {
-        return view('budget.create');
-    }
+
 
     public function store(Request $request)
     {

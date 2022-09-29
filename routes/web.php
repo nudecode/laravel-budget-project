@@ -31,9 +31,10 @@ Route::middleware([
     //     return view('dashboard');
     // })->name('dashboard');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/budget/{budget}', [BudgetController::class, 'index'])->name('index.budget');
-    Route::get('/create-budget', [BudgetController::class, 'create'])->name('create.budget');
-    Route::post('/budget', [BudgetController::class, 'store'])->name('store.budget');
+    Route::get('/budgets', [BudgetController::class, 'index'])->name('index.budget');
+    Route::get('/budgets/{budget}', [BudgetController::class, 'show'])->name('show.budget');
+    Route::get('/budgets/create', [BudgetController::class, 'create'])->name('create.budget');
+    Route::post('/budgets', [BudgetController::class, 'store'])->name('store.budget');
     Route::post('/transaction', [TransactionController::class, 'store'])->name('store.transaction');
 
 });

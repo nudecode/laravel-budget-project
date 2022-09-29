@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamp('period');
             $table->timestamp('period_start')->nullable();
             $table->timestamp('period_end')->nullable();
-            $table->boolean('iactive')->default(true);
+            $table->boolean('is_active')->default(true);
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
