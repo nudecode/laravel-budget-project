@@ -21,7 +21,8 @@ class TransactionFactory extends Factory
             'budget_id' => Budget::all()->random()->id,
             'name' => $this->faker->company(),
             'due_at'=> $this->faker->dateTimeBetween('+1 days', '+7 days'),
-            'amount' => $this->faker->numberBetween($min = 0, $max = 20000),
+            'amount' => $this->faker->numberBetween($min = -50000, $max = 20000),
+            'is_paid' => $this->faker->numberBetween($min = 0, $max = 1),
             'created_at' => now(),
             'updated_at' => now(),
         ];

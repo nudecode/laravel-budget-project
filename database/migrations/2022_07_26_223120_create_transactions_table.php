@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('budget_id')->constrained();
             $table->string('name');
             $table->timestamp('due_at')->nullable();
-            $table->unsignedInteger('amount')->default(0);
+            $table->bigInteger('amount')->default(0);
             $table->boolean('is_paid')->default(false);
             $table->timestamps();
         });

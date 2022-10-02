@@ -32,7 +32,7 @@ class Transaction extends Model
      */
     protected $casts = [
         'created_at' => 'datetime',
-        'amount' => MoneyCast::class,
+        // 'amount' => MoneyCast::class,
     ];
 
     public function budget()
