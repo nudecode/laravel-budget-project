@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Budget;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
-use PostScripton\Money\Money;
+use Cknow\Money\Money;
 use Illuminate\Support\Facades\Auth;
 
 class TransactionController extends Controller
@@ -50,5 +50,5 @@ class TransactionController extends Controller
 
     }
 
-    
+
 }

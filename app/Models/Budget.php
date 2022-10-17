@@ -21,7 +21,7 @@ class Budget extends Model
         'period' => 'datetime',
         'period_start' => 'datetime',
         'period_end' => 'datetime',
-        'amount' => MoneyCast::class,
+        'amount' => MoneyIntegerCast::class . ':AUD',
     ];
 
     public function user()

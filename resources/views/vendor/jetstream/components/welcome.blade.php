@@ -21,7 +21,7 @@
             <article class="icontext">
               <span class="icon icon-sm rounded-circle bg-primary-light"><i class="text-primary material-icons md-monetization_on"></i></span>
               <div class="text">
-                <h6 class="mb-1">Total Sales</h6>  <span>$19,626,058.20</span>
+                <h6 class="mb-1">Total Income</h6>  <span>$19,626,058.20</span>
               </div>
             </article>
 
@@ -32,7 +32,7 @@
             <article class="icontext">
               <span class="icon icon-sm rounded-circle bg-success-light"><i class="text-success material-icons md-local_shipping"></i></span>
               <div class="text">
-                <h6 class="mb-1">Total Orders</h6> <span>87790</span>
+                <h6 class="mb-1">Total Expenses</h6> <span>87790</span>
               </div>
             </article>
             </div> <!-- card end// -->

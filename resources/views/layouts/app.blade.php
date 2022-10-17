@@ -33,10 +33,11 @@
         <!-- Scripts -->
         <script src="{{ mix('js/jquery.js') }}" defer></script>
         <script src="{{ mix('js/bootstrap.bundle.min.js') }}" defer></script>
-        {{-- <script src="{{ mix('js/bootstrap.min.js') }}" defer></script> --}}
+        <script src="{{ mix('js/bootstrap.min.js') }}" defer></script>
         <script src="{{ mix('js/script.js') }}" defer></script>
         <script src="{{ mix('js/app.js') }}" defer></script>
         <script src="{{ mix('js/main.js') }}" defer></script>
+        <script src="{{ mix('js/dashboard.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased bg-light">
         <x-jet-banner />

@@ -30,7 +30,7 @@
                                 <th>Date</th>
                                 <th>Biller</th>
                                 <th>Amount</th>
-                                <th>Status</th>
+                                <th>Type</th>
                                 <th class="text-end"> Action </th>
                             </tr>
                         </thead>
@@ -39,10 +39,10 @@
                             <tr>
                                 <td>{{$transaction->created_at->format('d/m/Y')}}</td>
                                 <td>{{$transaction->name}}</td>
-                                <td>{{$transaction->amount}}</td>
+                                <td>@money($transaction->amount)</td>
                                 <td>
                                     <div class="col-lg-2 col-sm-2 col-4 col-status">
-                                        <span class="badge rounded-pill {{$transaction->amount->greaterThan(0) ? 'alert-success' : 'alert-danger'}}">{{$transaction->amount->greaterThan(0) ? 'Income' : 'Expense'}}</span>
+                                        <span class="badge rounded-pill {{$transaction->amount > 0 ? 'alert-success' : 'alert-danger'}}">{{$transaction->amount > 0 ? 'Income' : 'Expense'}}</span>
                                     </div>
                                 </td>
                                 <td class="text-end">

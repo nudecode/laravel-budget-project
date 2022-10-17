@@ -11,7 +11,7 @@
 
         </div>
     </x-slot>
-    <x-budget-summary :totalincomes="$totalincomes" :totalexpenses="$totalexpenses" :totalbalance="$totalbalance"/>
+    <x-budget-summary :totalincomes="$totalincomes" :totalexpenses="$totalexpenses" :balance="$balance"/>
 
     <x-addItem :budget="$budget"/>
 

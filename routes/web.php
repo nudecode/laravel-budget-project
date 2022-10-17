@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BillerController;
 use App\Http\Controllers\BudgetController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TransactionController;
 
@@ -35,6 +37,11 @@ Route::middleware([
     Route::get('/budgets/{budget}', [BudgetController::class, 'show'])->name('show.budget');
     Route::get('/budgets/create', [BudgetController::class, 'create'])->name('create.budget');
     Route::post('/budgets', [BudgetController::class, 'store'])->name('store.budget');
+
+    Route::get('/billers', [BillerController::class, 'index'])->name('index.billers');
+
+    Route::get('/categories', [CategoryController::class, 'index'])->name('index.category');
+
     Route::post('/transaction', [TransactionController::class, 'store'])->name('store.transaction');
 
 });

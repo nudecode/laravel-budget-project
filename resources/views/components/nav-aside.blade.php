@@ -16,7 +16,7 @@
           </a>
         </li>
         <li class="menu-item has-submenu">
-          <a class="menu-link" href="page-products-list.html"> <i class="icon material-icons md-shopping_bag"></i>
+          <a class="menu-link" href="{{route('index.budget')}}"> <i class="icon material-icons md-shopping_bag"></i>
             <span class="text">Budgets</span>
           </a>
           <div class="submenu">
@@ -28,7 +28,7 @@
           </div>
         </li>
         <li class="menu-item has-submenu">
-          <a class="menu-link" href="page-orders-1.html"> <i class="icon material-icons md-shopping_cart"></i>
+          <a class="menu-link" href="{{route('index.billers')}}"> <i class="icon material-icons md-shopping_cart"></i>
             <span class="text">Billers</span>
           </a>
           <div class="submenu">
@@ -38,7 +38,7 @@
           </div>
         </li>
         <li class="menu-item has-submenu">
-          <a class="menu-link" href="page-sellers-cards.html"> <i class="icon material-icons md-store"></i>
+          <a class="menu-link" href="{{route('index.category')}}"> <i class="icon material-icons md-store"></i>
             <span class="text">Categories</span>
           </a>
           <div class="submenu">

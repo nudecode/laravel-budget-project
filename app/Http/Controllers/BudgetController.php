@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Budget;
+use Cknow\Money\Money;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
-use PostScripton\Money\Money;
 use Illuminate\Support\Facades\Auth;
 
 class BudgetController extends Controller
@@ -17,7 +17,7 @@ class BudgetController extends Controller
      */
     public function index()
     {
-        $budgets = Budget::all();
+        $budgets = Budget::paginate(10);
 
 
 
@@ -47,34 +47,45 @@ class BudgetController extends Controller
         $budget = Budget::where('id', $id)->firstOrFail();
          $transactions = Transaction::where('budget_id', $id)->get();
         // $transactions = $budget->transactions()->get();
-        $getincomes = Transaction::select('amount')->get()->toArray();
-        $incomes = money(0);
-        $expense = money(0);
-        $balance = money(0);
+        $getTotals = Transaction::select('amount')->get()->toArray();
+        $incomes = Money::AUD(000);
+        $expenses = Money::AUD(000);
+        $balance = Money::AUD(000);
 
-        foreach ($getincomes as $key => $value) {
 
-            $total = $value['amount'];
 
-            if ($total->greaterThan(0)) {
-                $incomes->add($total);
+        foreach ($getTotals as $key => $value) {
+
+            $test = Money::USD(500)->add(Money::USD(500));
+
+            $total = Money::AUD($value['amount']);
+
+            dump($total);
+
+
+            if (Money::AUD($total)->greaterThan(Money::AUD(0))) {
+                Money::AUD($incomes)->add(Money::AUD($total));
 
             } else {
-                $expense->add($total);
+                $expenses->add($total);
             }
 
         }
 
         $totalincomes = $incomes;
-        $totalexpenses = $expense;
-        $totalbalance = $totalincomes->subtract($totalexpenses);
+        $totalexpenses = $expenses;
+        $balance = $totalincomes->subtract($totalexpenses);
+
+        // dd($totalincomes, $totalexpenses);
+        // $totalexpenses = 0;
+        // $totalbalance = 0;
 
         return view('budget.show')
             ->with('budget', $budget)
             ->with('transactions', $transactions)
             ->with('totalincomes', $totalincomes)
             ->with('totalexpenses', $totalexpenses)
-            ->with('totalbalance', $totalbalance);
+            ->with('balance', $balance);
     }
 
 
