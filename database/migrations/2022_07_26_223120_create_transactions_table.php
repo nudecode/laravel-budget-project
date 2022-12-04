@@ -19,6 +19,7 @@ return new class extends Migration
             $table->timestamp('due_at')->nullable();
             $table->integer('amount')->default(0);
             $table->boolean('is_paid')->default(false);
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }

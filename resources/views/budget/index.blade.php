@@ -1,10 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="h4 font-weight-bold">
-            {{ __('New Budget') }}
-        </h2>
+        <div>
+			<a href="#" class="btn btn-outline-danger"> &times; Discard</a>
+		</div>
     </x-slot>
-    <x-budget-summary :totalincomes="$totalincomes" :totalexpenses="$totalexpenses"/>
+    <x-budget-summary :incomes="$incomes" :expenses="$expenses"/>
 
     <x-addItem />
 

@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Models\User;
-use App\Models\Budget;
 use PostScripton\Money\Money;
 use Illuminate\Support\Facades\DB;
 use PostScripton\Money\MoneySettings;
@@ -35,9 +34,9 @@ class Transaction extends Model
         'amount' => MoneyCast::class,
     ];
 
-    public function budget()
+    public function user()
     {
-        return $this->belongsTo(Budget::class);
+        return $this->belongsTo(User::class);
     }
 
     public function formatAmount()

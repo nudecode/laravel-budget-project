@@ -2,9 +2,7 @@
 
 	<div class="content-header">
 		<h2 class="content-title">Add Transaction </h2>
-		<div>
-			<a href="#" class="btn btn-outline-danger"> &times; Discard</a>
-		</div>
+
 	</div>
 
 	<div class="card mb-4">
@@ -22,11 +20,6 @@
                     name="amount"
                     placeholder="Enter amount..." class="form-control">
 				</div>
-
-				{{-- <div class="mb-4">
-					<label class="form-label">Full description</label>
-					<textarea placeholder="Type here" class="form-control" rows="4"></textarea>
-				</div> --}}
 
 				{{-- <div class="mb-4">
 					<label class="form-label">Images</label>
@@ -77,13 +70,19 @@
 						</div>
 					</div> <!-- row.// -->
 				</div> --}}
+                <label class="form-check mb-4">
+                    <input hidden class="form-check-input"
+                        name="is_paid"
+                        type="checkbox"
+                        value="0">
+                    <input class="form-check-input"
+                        name="is_paid"
+                        type="checkbox"
+                        value="1">
+                    <span class="form-check-label">Paid </span>
+                  </label>
 
-				{{-- <label class="form-check mb-4">
-				  <input class="form-check-input" type="checkbox" value="">
-				  <span class="form-check-label">  Publish on website </span>
-				</label> --}}
-
-				<button type="submit" value="submit" class="btn btn-primary">Add item</button>
+				<button type="submit" value="submit" class="btn btn-success">Add item</button>
 
 			</form>
           </div>
