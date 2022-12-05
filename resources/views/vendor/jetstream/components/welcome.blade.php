@@ -20,24 +20,27 @@
         <div class="card mb-4">
        <article class="card-body">
 
-<h5 class="card-title">Summary</h5>
+        @auth
+
+            <h5 class="card-title">Summary</h5>
 
 
-<span class="text-muted">Balance</span><span class="d-block">{{$incomes->add($expenses)}}</span>
-<div class="progress mb-3">
-<div class="progress-bar progress-bar-striped" role="progressbar" style="width: 15%">15%</div>
-</div>
+            <span class="text-muted">Balance</span><span class="d-block">{{$incomes->add($expenses)}}</span>
+            <div class="progress mb-3">
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 15%">15%</div>
+            </div>
 
-<span class="text-muted">Income</span><span class="d-block">{{$incomes}}</span>
-<div class="progress mb-3">
-<div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 65%">65% </div>
-</div>
+            <span class="text-muted">Income</span><span class="d-block">{{$incomes}}</span>
+            <div class="progress mb-3">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 65%">65% </div>
+            </div>
 
-<span class="text-muted">Expense</span><span class="d-block">{{$expenses}}</span>
-<div class="progress mb-3">
-<div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 51%"> 51% </div>
-</div>
-<br>
+            <span class="text-muted">Expense</span><span class="d-block">{{$expenses}}</span>
+            <div class="progress mb-3">
+            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 51%"> 51% </div>
+            </div>
+        @endauth
+        <br>
          </article> <!-- card-body end// -->
         </div> <!-- card end// -->
     </div> <!-- col end// -->
