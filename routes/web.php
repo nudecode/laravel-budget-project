@@ -57,6 +57,15 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
+    // Route::get('/dashboard', function () {
+    //     return view('dashboard');
+    // })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/budget/create', [BudgetController::class, 'create'])->name('create.budget');
+    Route::get('/budget/{budget}', [BudgetController::class, 'index'])->name('index.budget');
+    Route::post('/budget', [BudgetController::class, 'store'])->name('store.budget');
+
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/transaction', [TransactionController::class, 'index'])->name('transactions');
     Route::post('/transaction', [TransactionController::class, 'store'])->name('store.transaction');
