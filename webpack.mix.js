@@ -37,6 +37,10 @@ mix.js("resources/admin-template/js/script.js", "public/js/script.js");
 //     "public/css/bootstrap.css"
 // );
 mix.css(
+    "resources/css/style.css",
+    "public/css/style.css"
+);
+mix.css(
     "resources/admin-template/css/responsive.css",
     "public/css/responsive.css"
 );

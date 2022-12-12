@@ -1,9 +1,13 @@
 <?php
 
+use App\Models\Transaction;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BillerController;
 use App\Http\Controllers\BudgetController;
+<<<<<<< HEAD
 use App\Http\Controllers\CategoryController;
+=======
+>>>>>>> main
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TransactionController;
 
@@ -19,16 +23,45 @@ use App\Http\Controllers\TransactionController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/budget', [BudgetController::class,'index'])->name('budget');
+        // $budgets = Budget::where('user_id', Auth::id())
+        //     ->with('user')
+        //     ->get();
+        $transactions = Transaction::all();
+        $getincomes = Transaction::select('amount')->get()->toArray();
+        $incomes = money(0);
+        $expense = money(0);
+
+        foreach ($getincomes as $key => $value) {
+
+            $total = $value['amount'];
+
+            if ($total->greaterThan(0)) {
+                $incomes->add($total);
+
+            } else {
+                $expense->add($total);
+            }
+
+        }
+
+        $totalincomes = $incomes;
+
+
+        $totalexpenses = $expense;
+
+        return view('welcome')
+            ->with('transactions', $transactions)
+            ->with('totalincomes', $totalincomes)
+            ->with('totalexpenses', $totalexpenses);
+});
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
+<<<<<<< HEAD
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
     // })->name('dashboard');
@@ -38,6 +71,10 @@ Route::middleware([
     Route::get('/budget/{budget}', [BudgetController::class, 'index'])->name('index.budget');
     Route::post('/budget', [BudgetController::class, 'store'])->name('store.budget');
 
+=======
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/transaction', [TransactionController::class, 'index'])->name('transactions');
+>>>>>>> main
     Route::post('/transaction', [TransactionController::class, 'store'])->name('store.transaction');
 
     Route::get('/billers', [BillerController::class, 'index'])->name('index.billers');

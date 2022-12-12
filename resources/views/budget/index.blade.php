@@ -1,4 +1,5 @@
 <x-app-layout>
+<<<<<<< HEAD
     <x-slot name="header" :budget="$budget">
         <div class="d-flex justify-content-between ">
             <h2 class="h4 font-weight-bold">
@@ -14,6 +15,16 @@
     <x-budget-summary :totalincomes="$totalincomes" :totalexpenses="$totalexpenses" :totalbalance="$totalbalance"/>
 
     <x-addItem :budget="$budget"/>
+=======
+    <x-slot name="header">
+        <div>
+			<a href="#" class="btn btn-outline-danger"> &times; Discard</a>
+		</div>
+    </x-slot>
+    <x-budget-summary :incomes="$incomes" :expenses="$expenses"/>
+
+    <x-addItem :billers="$billers"/>
+>>>>>>> main
 
     <x-budget-items :transactions="$transactions" />
 

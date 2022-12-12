@@ -8,22 +8,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-lg-12">
-                    {{-- <header class="border-bottom mb-4 pb-4">
-                        <div class="row">
-                            <div class="col-lg-5 col-6 me-auto">
-                                <input type="text" placeholder="Search..." class="form-control">
-                            </div>
-                            <div class="col-lg-2 col-6">
-                                <select class="form-select">
-                                    <option>Method</option>
-                                    <option>Master card</option>
-                                    <option>Visa card</option>
-                                    <option>Paypal</option>
-                                </select>
-                            </div>
-                        </div>
-                    </header> <!-- card-header end// --> --}}
-                    <div class="table-responsive">
+                    <div class="">
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -42,7 +27,7 @@
                                 <td>{{$transaction->amount}}</td>
                                 <td>
                                     <div class="col-lg-2 col-sm-2 col-4 col-status">
-                                        <span class="badge rounded-pill {{$transaction->amount->greaterThan(0) ? 'alert-success' : 'alert-danger'}}">{{$transaction->amount->greaterThan(0) ? 'Income' : 'Expense'}}</span>
+                                        <span class="badge rounded-pill {{$transaction->amount->isPositive() ? 'alert-success' : 'alert-danger'}}">{{$transaction->amount->isPositive() ? 'Income' : 'Expense'}}</span>
                                     </div>
                                 </td>
                                 <td class="text-end">
