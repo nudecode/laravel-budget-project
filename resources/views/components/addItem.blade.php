@@ -21,9 +21,6 @@
                     name="amount"
                     placeholder="Enter amount..." class="form-control">
 				</div>
-<<<<<<< HEAD
-				<button type="submit" value="submit" class="btn btn-primary">Add item</button>
-=======
 
 				{{-- <div class="mb-4">
 					<label class="form-label">Images</label>
@@ -49,7 +46,7 @@
 					    	<option> Baby and Tous </option> --}}
 					    </select>
 				  	</div>
-					  <div class="col-sm-6 mb-3">
+					  {{-- <div class="col-sm-6 mb-3">
 					    <label class="form-label">Sub-category</label>
 					    <select class="form-select">
 					    	<option> Nissan </option>
@@ -57,7 +54,7 @@
 					    	<option> Mercedes </option>
 					    	<option> Chevrolet </option>
 					    </select>
-					  </div>
+					  </div> --}}
 				</div> <!-- row.// -->
 
 
@@ -90,7 +87,6 @@
 
 				<button type="submit" value="submit" class="btn btn-success">Add item</button>
 
->>>>>>> main
 			</form>
           </div>
     </div> <!-- card end// -->
