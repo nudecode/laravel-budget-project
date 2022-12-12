@@ -16,7 +16,7 @@ class TransactionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Budget $budget)
+    public function index()
     {
         $billers = Auth()->user()->billers();
         $periodStart = carbon::now()->startOfMonth();
@@ -56,7 +56,6 @@ class TransactionController extends Controller
     public function store(Request $request)
     {
 
-        dd($request);
         $transaction = new Transaction;
         $amount = new Money($request->amount);
 

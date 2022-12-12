@@ -15,12 +15,7 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-<<<<<<< HEAD
-            $table->foreignId('budget_id')->constrained();
-            $table->foreignId('biller_id')->constrained();
-=======
             $table->string('name');
->>>>>>> main
             $table->timestamp('due_at')->nullable();
             $table->integer('amount')->default(0);
             $table->boolean('is_paid')->default(false);

@@ -13,10 +13,12 @@ class BillerController extends Controller
     {
         $user = Auth::user();
         $billers = Biller::where('user_id', $user->id);
+        // $authBillers = Auth::user()->billers();
 
-        return view('budget.index')
+        return view('billers.index')
         ->with('billers', $billers);
     }
+
     public function create()
     {
         $categories = Auth::user()->categories;
