@@ -2,12 +2,8 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
-use App\Models\Budget;
-=======
 use Carbon\Carbon;
 use App\Models\Biller;
->>>>>>> main
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use PostScripton\Money\Money;
@@ -22,18 +18,9 @@ class TransactionController extends Controller
      */
     public function index(Budget $budget)
     {
-<<<<<<< HEAD
-        // $transactions = Transaction::where()
-        //     ->with('user')
-        //     ->get();
-        $transactions = $budget->transactions();
-
-        dd($transactions);
-=======
         $billers = Auth()->user()->billers();
         $periodStart = carbon::now()->startOfMonth();
         $periodEnd = carbon::now()->endOfMonth();
->>>>>>> main
 
         $transactions = Transaction::all();
         $getincomes = Transaction::select('amount')->whereBetween('due_at',[$periodStart,$periodEnd])->get()->toArray();
@@ -73,13 +60,8 @@ class TransactionController extends Controller
         $transaction = new Transaction;
         $amount = new Money($request->amount);
 
-<<<<<<< HEAD
-        $transaction->budget_id = $request->id;
-        $transaction->biller_id = $request->biller_id;
-=======
         $transaction->name = $request->name;
         $transaction->due_at = now()->addDays(5);
->>>>>>> main
         $transaction->amount = $amount;
         $transaction->is_paid = $request->has('is_paid') ? 1 : 0;
         $transaction->user_id = Auth::user()->id;

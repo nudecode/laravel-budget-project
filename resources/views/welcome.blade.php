@@ -78,13 +78,8 @@
                       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                         @if (Route::has('login'))
                             @auth
-<<<<<<< HEAD
-                                <a href="{{ route('store.budget') }}" class="btn btn-primary btn-lg px-4 gap-3">Create Budget</a>
-                                <a href="{{ url('/dashboard') }}" class="btn btn-outline-secondary btn-lg px-4">Dashboard</a>
-=======
                                 <a href="{{ route('transactions') }}" class="btn btn-success btn-lg px-4 gap-3">Add Transaction</a>
                                 <a href="{{ route('dashboard') }}" class="btn btn-outline-secondary btn-lg px-4">Dashboard</a>
->>>>>>> main
                             @else
                                 @if (Route::has('register'))
                                     <a href="{{ route('register') }}" class="text-white btn btn-success btn-lg px-4 gap-3">Register</a>
