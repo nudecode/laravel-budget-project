@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Transaction;
 use Carbon\Carbon;
+use App\Models\Biller;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 use PostScripton\Money\Money;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +18,7 @@ class TransactionController extends Controller
      */
     public function index()
     {
+        $billers = Auth()->user()->billers();
         $periodStart = carbon::now()->startOfMonth();
         $periodEnd = carbon::now()->endOfMonth();
 
@@ -42,7 +44,8 @@ class TransactionController extends Controller
         return view('budget.index')
             ->with('transactions', $transactions)
             ->with('incomes', $incomes)
-            ->with('expenses', $expense);
+            ->with('expenses', $expense)
+            ->with('billers', $billers);
     }
 
     public function create()

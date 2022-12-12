@@ -6,7 +6,7 @@
     </x-slot>
     <x-budget-summary :incomes="$incomes" :expenses="$expenses"/>
 
-    <x-addItem />
+    <x-addItem :billers="$billers"/>
 
     <x-budget-items :transactions="$transactions"/>
 

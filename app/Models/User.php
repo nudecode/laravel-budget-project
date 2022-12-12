@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Biller;
 use App\Models\Budget;
 use App\Models\Transaction;
 use Laravel\Sanctum\HasApiTokens;
@@ -65,5 +66,10 @@ class User extends Authenticatable
     public function transactions()
     {
         return $this->hasMany(Transaction::class);
+    }
+
+    public function billers()
+    {
+        return $this->hasMany(Biller::class);
     }
 }
