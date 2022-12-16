@@ -7,5 +7,5 @@
     <x-budget-header />
     <x-budget-summary />
 
-    <x-addItem :transactions="$transactions"/>
+    <x-transactions.addItem :transactions="$transactions"/>
 </x-app-layout>

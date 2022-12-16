@@ -12,7 +12,8 @@ class BillerController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $billers = Biller::where('user_id', $user->id);
+        $billers = Biller::where('user_id', $user->id)->get();
+        // $billers = Biller::all();
         // $authBillers = Auth::user()->billers();
 
         return view('billers.index')
