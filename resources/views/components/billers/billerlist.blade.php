@@ -16,9 +16,6 @@
                     <tr>
                         <td width="40%">
                             <a href="#" class="itemside">
-                                <div class="left">
-                                    <img src="images/people/avatar1.jpg" class="img-sm img-avatar" alt="Userpic">
-                                </div>
                                 <div class="info pl-3">
                                     <h6 class="mb-0 title">{{$biller->name}}</h6>
                                     <small class="text-muted">Seller ID: #{{$biller->id}}</small>

@@ -18,7 +18,8 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        $billers = Auth()->user()->billers();
+        $billers = Biller::whereBelongsTo(Auth::user())->get();
+        // $billers = Auth::user()->billers()->get();
         $periodStart = carbon::now()->startOfMonth();
         $periodEnd = carbon::now()->endOfMonth();
 

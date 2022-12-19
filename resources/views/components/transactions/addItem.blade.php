@@ -38,7 +38,7 @@
 					    <label class="form-label">Biller</label>
 					    <select name="biller" id="biller" class="form-select">
                             @foreach ($billers as $biller)
-					    	<option> $biller->name </option>
+					    	<option value="{{$biller->id}}"> {{$biller->name }}</option>
                             @endforeach
 					    </select>
                         <label for="floatingInput">Select Biller</label>
