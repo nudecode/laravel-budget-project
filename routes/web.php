@@ -27,15 +27,16 @@ Route::get('/', function () {
         $incomes = money(0);
         $expense = money(0);
 
+
         foreach ($getincomes as $key => $value) {
 
-            $total = $value['amount'];
+            $amount = $value['amount'];
 
-            if ($total->greaterThan(0)) {
-                $incomes->add($total);
+            if ($amount->isPositive()) {
+                $incomes->add($amount);
 
             } else {
-                $expense->add($total);
+                $expense->add($amount);
             }
 
         }
