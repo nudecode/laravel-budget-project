@@ -37,6 +37,7 @@
 					<div class="col-sm-6 mb-3">
 					    <label class="form-label">Biller</label>
 					    <select name="biller" id="biller" class="form-select">
+                            <option value=""> -- Select Biller --</option>
                             @foreach ($billers as $biller)
 					    	<option value="{{$biller->id}}"> {{$biller->name }}</option>
                             @endforeach
