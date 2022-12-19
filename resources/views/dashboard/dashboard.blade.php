@@ -1,4 +1,10 @@
+<x-app-layout>
 <b class="screen-overlay"></b>
+<x-slot name="header">
+    <h2 class="h4 font-weight-bold">
+        {{ __('Dashboard') }}
+    </h2>
+</x-slot>
 
 <aside class="navbar-aside" id="offcanvas_aside">
 <div class="aside-top">
@@ -145,7 +151,7 @@
         <a class="nav-link" href="#"> English </a>
       </li>
       <li class="dropdown nav-item">
-        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#"> <img class="img-xs rounded-circle" src="images/people/avatar1.jpg" alt="User"></a>
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#"> <img class="img-xs rounded-circle" src="/assets/img/people/avatar1.jpg" alt="User"></a>
         <div class="dropdown-menu dropdown-menu-end">
           <a class="dropdown-item" href="#">My profile</a>
           <a class="dropdown-item" href="#">Settings</a>
@@ -396,15 +402,6 @@
 	}
 </script>
 
-<script src="js/jquery-3.5.0.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-
-<!-- ChartJS files-->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-
-<!-- Custom JS -->
-<script src="js/script.js?v=1.0" type="text/javascript"></script>
-
 <!-- ChartJS customize-->
 <script>
 	var ctx = document.getElementById('myChart').getContext('2d');
@@ -436,3 +433,4 @@
 	    options: {}
 	});
 </script>
+</x-app-layout>

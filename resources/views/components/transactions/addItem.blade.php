@@ -103,7 +103,7 @@
                 <div class="form-floating mb-3">
                   {{-- <input type="text" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com"> --}}
                   <select name="biller" id="biller" class="form-select">
-                    <option value="">-- Select Biller -- </option>
+                    {{-- <option value="">-- Select Biller -- </option> --}}
                     @foreach ($billers as $biller)
                         <option value="{{$biller->id}}" {{ (isset($biller->id) || old('id'))? "selected":"" }}>{{$biller->name}}</option>
                     @endforeach

@@ -72,4 +72,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Biller::class);
     }
+
+
+    public function categories()
+    {
+        return $this->hasMany(Category::class);
+    }
 }

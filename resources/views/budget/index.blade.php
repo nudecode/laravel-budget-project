@@ -6,8 +6,8 @@
     </x-slot>
     <x-budget-summary :incomes="$incomes" :expenses="$expenses"/>
 
-    <x-addItem :billers="$billers"/>
+    <x-transactions.addItem :billers="$billers"/>
 
-    <x-budget-items :transactions="$transactions"/>
+    <x-budget-items :transactions="$transactions" />
 
 </x-app-layout>
