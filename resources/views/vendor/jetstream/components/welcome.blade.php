@@ -7,11 +7,11 @@
 		<div>
 			<a href="{{ route('transactions') }}" class="btn btn-outline-success">Expenses <span>{{ $expenses }}</span></a>
 		</div>
+        <div>
+            <a href="{{ route('index.billers') }}" class="btn btn-outline-success">Billers</a>
+        </div>
 		{{-- <div>
 			<a href="#" class="btn btn-primary">Income</a>
-		</div>
-		<div>
-			<a href="#" class="btn btn-primary">Billers</a>
 		</div> --}}
 	</div>
 {{--<x-budget-summary :totalincomes="$totalincomes" :totalexpenses="$totalexpenses"/>--}}

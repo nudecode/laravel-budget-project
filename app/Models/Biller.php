@@ -10,8 +10,15 @@ class Biller extends Model
 {
     use HasFactory;
 
-    public function biller()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
+
+    public function category()
+    {
+        return $this->hasMany(Category::class);
+    }
+
+
 }

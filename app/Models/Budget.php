@@ -12,6 +12,18 @@ class Budget extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'period' => 'datetime',
+        'period_start' => 'datetime',
+        'period_end' => 'datetime',
+        'amount' => MoneyCast::class,
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

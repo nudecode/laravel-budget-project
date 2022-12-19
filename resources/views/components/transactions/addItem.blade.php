@@ -12,6 +12,8 @@
 				<div class="mb-4">
 					<label for="product_name" class="form-label">Name</label>
 					<input id="name" name="name" placeholder="Enter item..." class="form-control">
+                    <small class="text-muted">Positive for income negitive for expense</small>
+					{{-- <input type="hidden" id="budget_id" name="budget_id" value="{{$budget->id}}"> --}}
 				</div>
 				<div class="mb-4">
 					<label for="product_name" class="form-label">Amount</label>
@@ -34,18 +36,14 @@
 				<div class="row gx-2">
 					<div class="col-sm-6 mb-3">
 					    <label class="form-label">Biller</label>
-					    <select class="form-select">
+					    <select name="biller" id="biller" class="form-select">
                             @foreach ($billers as $biller)
-					    	<option> $biller->name </option>
+					    	<option value="{{$biller->id}}"> {{$biller->name }}</option>
                             @endforeach
-					    	{{-- <option> Home items </option>
-					    	<option> Electronics </option>
-					    	<option> Smartphones </option>
-					    	<option> Sport items </option>
-					    	<option> Baby and Tous </option> --}}
 					    </select>
+                        <label for="floatingInput">Select Biller</label>
 				  	</div>
-					  <div class="col-sm-6 mb-3">
+					  {{-- <div class="col-sm-6 mb-3">
 					    <label class="form-label">Sub-category</label>
 					    <select class="form-select">
 					    	<option> Nissan </option>
@@ -53,7 +51,7 @@
 					    	<option> Mercedes </option>
 					    	<option> Chevrolet </option>
 					    </select>
-					  </div>
+					  </div> --}}
 				</div> <!-- row.// -->
 
 
@@ -102,9 +100,15 @@
             <div class="modal-body p-5 pt-0">
               <form class="">
                 <div class="form-floating mb-3">
-                  <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+                  {{-- <input type="text" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com"> --}}
+                  <select name="biller" id="biller" class="form-select">
+                    {{-- <option value="">-- Select Biller -- </option> --}}
+                    @foreach ($billers as $biller)
+                        <option value="{{$biller->id}}" {{ (isset($biller->id) || old('id'))? "selected":"" }}>{{$biller->name}}</option>
+                    @endforeach
+                </select>
                   <small class="text-muted">Positive for income negitive for expense</small>
-                  <label for="floatingInput">Item</label>
+                  <label for="floatingInput">Select Biller</label>
                 </div>
                 <div class="list-group list-group-radio d-grid gap-2 border-0 w-auto">
                     <div class="position-relative">

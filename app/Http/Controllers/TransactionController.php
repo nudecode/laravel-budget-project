@@ -18,7 +18,8 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        $billers = Auth()->user()->billers();
+        $billers = Biller::whereBelongsTo(Auth::user())->get();
+        // $billers = Auth::user()->billers()->get();
         $periodStart = carbon::now()->startOfMonth();
         $periodEnd = carbon::now()->endOfMonth();
 
@@ -55,6 +56,7 @@ class TransactionController extends Controller
 
     public function store(Request $request)
     {
+
         $transaction = new Transaction;
         $amount = new Money($request->amount);
 
@@ -66,7 +68,11 @@ class TransactionController extends Controller
 
         $transaction->save();
 
-        return redirect()->back();
+         $transaction = $transaction->fresh();
+
+        return redirect()->back()->with('transaction', $transaction);
 
     }
+
+
 }

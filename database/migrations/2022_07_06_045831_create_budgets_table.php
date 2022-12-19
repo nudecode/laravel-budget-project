@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('transactions', function (Blueprint $table) {
+        Schema::create('budgets', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('biller_id')->constrained();
-            $table->timestamp('due_at')->nullable();
-            $table->integer('amount')->default(0);
-            $table->boolean('is_paid')->default(false);
+            $table->timestamp('period');
+            $table->timestamp('period_start')->nullable();
+            $table->timestamp('period_end')->nullable();
+            $table->boolean('is_active')->default(true);
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        Schema::dropIfExists('budgets');
     }
 };

@@ -2,6 +2,9 @@
 <div class="content-header">
     <h2 class="content-title"> Quick Summary</h2>
 </div>
+@empty($totalIncomes)
+    empty
+@endempty
 <div class="row">
     <div class="col-lg-4">
         <div class="card card-body mb-4">
@@ -17,7 +20,7 @@
     <div class="col-lg-4">
         <div class="card card-body mb-4">
     <article class="icontext">
-      <span class="icon icon-sm rounded-circle bg-warning-light"><i class="text-warning material-icons md-monetization_on"></i></span>
+      <span class="icon icon-sm rounded-circle bg-danger-light"><i class="text-danger material-icons md-monetization_on"></i></span>
       <div class="text">
         <h4 class="text-muted mb-1">Expenses</h4> <span><h4 class="text-muted">{{ $expenses }}</h4></span>
       </div>
